@@ -1,7 +1,9 @@
 export function formatDate(date: Date) {
-    const tommorowDate = changeDateByDay(date, 1);
-    console.log(tommorowDate);
-    return `${isToday(date) && "Dnes"} ${date.getDate()}.${
+    const tommorow = new Date().getDate()+1 === date.getDate();
+    const today = isToday(date)
+    
+    const prefix = today ? "Dnes" : tommorow ? "Zítra" : ""
+    return `${prefix} ${date.getDate()}.${
         date.getMonth() + 1
     }.`;
 }
