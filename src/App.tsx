@@ -6,7 +6,7 @@ import { CalendarContextProvider } from "./context/CalendarContext";
 function App() {
     return (
         <div className="w-full m-0 p-0 h-screen flex items-center justify-center bg-red">
-            <div className="p-8 space-y-4 shadow-sm shadow-black rounded-xl h-4/5 w-[40vw] text-theme-secondary bg-gradient-to-b from-theme-primaryDark to-theme-primaryLight">
+            <div className="p-8 space-y-4 shadow-sm shadow-black rounded-xl h-[90vh] w-[90vw] lg:w-[40vw] lg:h-4/5 overflow-y-scroll text-theme-secondary bg-gradient-to-b from-theme-primaryDark to-theme-primaryLight">
                 <CalendarContextProvider>
                   <Nav />
                   <DatePicker />

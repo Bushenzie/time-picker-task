@@ -4,7 +4,7 @@ import Button from "./ui/Button";
 
 export default function TimesList() {
     const { data, reserveItemSpace, currentDate, isLoading } = useCalendar();
-    const [selected, setSelected] = useState<string | null>(null);
+    const [ selected, setSelected ] = useState<string | null>(null);
 
     useEffect(() => {
         setSelected(null);
@@ -22,11 +22,11 @@ export default function TimesList() {
 
     return (
         <div>
-            <div className="grid grid-cols-3 h-full gap-2">
+            <div className="grid grid-cols-1 h-full md:grid-cols-2 lg:grid-cols-3 gap-2 relative">
                 {isLoading ? (
-                    <h1 className="text-center col-span-3">Loading...</h1>
+                    <h1 className="text-center col-span-1 md:col-span-2  lg:col-span-3">Loading...</h1>
                 ) : data.length === 0 ? (
-                    <h1 className="text-center col-span-3">No items found.</h1>
+                    <h1 className="text-center col-span-1 md:col-span-2 lg:col-span-3">No items found.</h1>
                 ) : (
                     <>
                         {data.map((time, index) => {
@@ -53,7 +53,7 @@ export default function TimesList() {
                         })}
                         {selected !== null && (
                             <Button
-                                className="col-span-3 text-xs w-full"
+                                className=" col-span-full  text-xs w-full"
                                 onClick={onClickReserve}
                             >
                                 Reserve

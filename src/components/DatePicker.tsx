@@ -18,9 +18,9 @@ export default function DatePicker() {
     }
 
     return (
-        <div className="w-full grid grid-cols-6 gap-2 text-sm justify-between">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-6 gap-2 text-sm justify-between">
             <Button
-                className="col-span-1 w-full text-sm"
+                className="col-span-2 lg:col-span-1 w-full text-sm"
                 disabled={isToday(currentDate)}
                 onClick={onClickDecrement}
             >
@@ -33,7 +33,7 @@ export default function DatePicker() {
                 {formatDate(changeDateByDay(currentDate,1))}
             </Button>
             <Button
-                className="col-span-1 w-f ull text-sm"
+                className="col-span-2 lg:col-span-1 w-full text-sm"
                 onClick={onClickIncrement}
             >
                 <FiArrowRight />
